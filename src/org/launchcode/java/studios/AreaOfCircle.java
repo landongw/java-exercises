@@ -9,10 +9,6 @@ public class AreaOfCircle {
         float A;
         boolean rB = true;  // true means r has not been initialized
 
-//        if (r == null) {
-//            rB = false;
-//        }
-
         while (rB) {
             Scanner in1;
             in1 = new Scanner(System.in);
