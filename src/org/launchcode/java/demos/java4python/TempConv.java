@@ -7,15 +7,15 @@ import java.util.Scanner;
  */
 public class TempConv {
     public static void main(String[] args) {
-        double fahrenheit;
-        double celsius;
-        Scanner in;
+        float fahrenheit;
+        float celsius;
+        //Scanner in;
 
-        in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         System.out.println("Enter the temperature in F: ");
-        fahrenheit = in.nextDouble();
+        fahrenheit = in.nextFloat();
 
-        celsius = (fahrenheit - 32) * 5.0/9.0;
+        celsius = (float) ((fahrenheit - 32.0) * 5.00/9.00);
         System.out.println("The temperature in C is: " + celsius);
     }
 
