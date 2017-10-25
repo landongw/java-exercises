@@ -12,8 +12,12 @@ public class AreaOfCircle {
         in1 = new Scanner(System.in);
         System.out.println("Enter the radius of the circle: ");
         r = in1.nextFloat();
-        A = (float) pi * r * r;
-        System.out.println("The area of the circle of radius " + r + " is " + A + ".");
 
+        if (r < 0) {
+            System.out.println("Error: negative number not make circle.");
+        } else {
+            A = (float) pi * r * r;
+            System.out.println("The area of the circle of radius " + r + " is " + A + ".");
+        }
     }
 }
