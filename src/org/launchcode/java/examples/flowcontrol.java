@@ -2,6 +2,7 @@ package org.launchcode.java.examples;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class flowcontrol {
 
@@ -57,6 +58,17 @@ public class flowcontrol {
 
         System.out.println(daysArrayList);
         System.out.println(daysArrayList.get(1));
+
+        // HashMap (Dictionary)
+        HashMap<String, Integer> ages = new HashMap<>();
+        ages.put("John", 9);
+        ages.put("LaunchCode", 4);
+        ages.put("michael", 29);
+
+        System.out.println(ages);
+        System.out.println("Michael: " + ages.get("MICHAEL".toLowerCase()));
+        System.out.println("Sharon default: " + ages.getOrDefault("sharon", 0));
+        System.out.println(ages.keySet() + " " + ages.values());
 
     }
 

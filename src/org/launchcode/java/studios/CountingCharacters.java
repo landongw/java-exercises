@@ -11,12 +11,11 @@ public class CountingCharacters {
 
         for (char character : charactersInString) {
             if (counts.containsKey(character)) {
-                counts.put(character, counts.get(character) + 1);  // I STUCK HERE, HOW TO UPDATE HASHMAP OR IF TO USE HASHMAP
+                counts.put(character, counts.get(character) + 1);
+            } else {
+                counts.put(character, 1);
             }
         }
-
-        // ITERATE THROUGH EACH KEY IN COUNT HASHMAP
-            // PRINT KEY AND COUNT
 
         return String.valueOf(counts);
     }
