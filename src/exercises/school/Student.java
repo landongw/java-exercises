@@ -1,4 +1,4 @@
-package school;
+package exercises.school;
 
 public class Student {
 
@@ -36,7 +36,7 @@ public class Student {
         name = aName;
     }
 
-    public Integer getstudentId() {
+    public Integer getStudentId() {
         return studentId;
     }
 
