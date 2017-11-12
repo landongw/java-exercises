@@ -5,11 +5,11 @@ package org.launchcode.java.demos.java4python.methods;
  */
 public class Message {
 
-    public static String getMessage(String lang) {
+    public static String getMessage(String language) {
 
-        if (lang.equals("sp")) {
+        if (language.equals("sp")) {
             return "Hola Mundo";
-        } else if (lang.equals("fr")) {
+        } else if (language.equals("fr")) {
             return "Bonjour le monde";
         } else {
             return "Hello World";
