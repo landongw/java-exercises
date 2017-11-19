@@ -24,27 +24,42 @@ public class Course {
         this(name, nextCourseId++, students, numberOfCredits);
     }
 
+    public Course(String name, int numberOfCredits) {
+        this(name, nextCourseId++, null, numberOfCredits);
+    }
+
     public String getName() {
+
         return name;
     }
 
     public void setName(String aName) {
+
         name = aName;
     }
 
-    public Integer getCourseId() {
+    public int getCourseId() {
+
         return courseId;
     }
 
-//    private void setCourseId(Integer aCourseId) {  // TODO: Figure out how to set this and make private?
-//        courseId = aCourseId;
-//    }
+    public ArrayList<Student> getStudents() {
+
+        return students;
+    }
+
+    public void setStudents(ArrayList<Student> students) {
+
+        this.students = students;
+    }
 
     public Integer getNumberOfCredits() {
+
         return numberOfCredits;
     }
 
     public void setNumberOfCredits(Integer aNumberOfCredits) {
+
         numberOfCredits = aNumberOfCredits;
     }
 }
