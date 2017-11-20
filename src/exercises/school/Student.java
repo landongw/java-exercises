@@ -1,5 +1,12 @@
 package exercises.school;
 
+import org.javatuples.Pair;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 /**
  * Created by Landon Wiedenman
  */
@@ -11,6 +18,7 @@ public class Student {
     private final int studentId;
     private int numberOfCredits;
     private double gpa;
+    private Map<Integer, Pair<Integer, Double>> gradesList = new HashMap<>(); // class id, credits and grade score (4.0)
     double qualityScore;
 
     public Student(String name, int studentId,
@@ -20,7 +28,8 @@ public class Student {
         this.studentId = studentId;
         this.numberOfCredits = numberOfCredits;
         this.gpa = gpa;
-        this.qualityScore = gpa * numberOfCredits;
+        this.gradesList = new HashMap<>();
+        this.qualityScore = 0;
     }
 
     public Student(String name, int studentId) {
@@ -51,14 +60,17 @@ public class Student {
 //    }
 
     public Integer getNumberOfCredits() {
+
         return numberOfCredits;
     }
 
     public void setNumberOfCredits(Integer aNumberOfCredits) {
+
         numberOfCredits = aNumberOfCredits;
     }
 
     public Double getGpa() {
+
         return gpa;
     }
 
@@ -66,9 +78,14 @@ public class Student {
         gpa = aGpa;
     }
 
-    public void addGrade(int courseCredits, double grade) {
-        // Update the appropriate fields: numberOfCredits, gpa
-        numberOfCredits += courseCredits;
+    public void addGrade(int courseID, int courseCredits, double grade) {
+        // Add grade to the gradesList
+        gradesList.put(courseID, new Pair<>(courseCredits, grade));
+        int iGrade = (int) grade;
+        numberOfCredits += ((courseCredits / 4) * iGrade); // TODO: This keeps evaluating to zero, WHY WHY WHY??!!
+//        gpa = grade / courseCredits; // totalQualityScore is the same as GPA
+
+
 
         // The total quality score is the sum of the quality scores of
         // all classes, and the quality score for a class is found by
@@ -78,7 +95,25 @@ public class Student {
         // their quality score would be: 4.0 * 3 + 3.0 * 4 = 24. And their
         // GPA would then be 24 / 7 = 3.43.
 
-        // gpa = total quality score / total credits
+        // gpa = total quality score / total credits * 4
+
+//        System.out.println(gradesList.values());
+
+//        qualityScore = 0;
+
+        Iterator it = gradesList.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            System.out.println(pair.getKey() + ": " + pair.getValue());
+            Pair innerPair = (Pair) pair.getValue();
+            Object innerOne = innerPair.getValue0();
+            int intOne = (int) innerOne;
+            double diOne = (double) intOne;
+            double innerTwo = (double) innerPair.getValue1();
+            double innerQualityScore = diOne * innerTwo;
+
+            qualityScore = qualityScore + innerQualityScore;
+        }
 
         double aGpa = qualityScore / numberOfCredits;
         setGpa(aGpa);

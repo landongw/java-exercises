@@ -128,7 +128,7 @@ public class Main {
                         // Set Grade
                         System.out.println("Grade (ex: 4.0): ");
                         double aGrade = in.nextDouble();
-                        student.addGrade(aCourseCredits, aGrade);
+                        student.addGrade(iCourseID, aCourseCredits, aGrade);
 
                         // Read in the newline before looping back
                         in.nextLine();
