@@ -32,6 +32,7 @@ public class Main {
         actionChoices.put("add courses", "Add Courses");
         actionChoices.put("add student grades", "Add Student Grades");
         actionChoices.put("enroll students in course", "Enroll Students in Course");
+        // TODO: Add getGradeLevel option into UI and finish method in Student class
 
         System.out.println("Welcome to the Gradebook App!");
 
@@ -50,6 +51,7 @@ public class Main {
                     double aGpa = student.getGpa();
                     int aNumberOfCredits = student.getNumberOfCredits();
 
+                    // TODO: complete gpa calculation (but do it in the Student class
                     System.out.println("Name: " + aName + "\nID: " + aId + "\nGPA: " + aGpa + "\nCredits: " +
                                         aNumberOfCredits + "\n");
                 }
@@ -74,7 +76,7 @@ public class Main {
                         }
 
 
-                        System.out.println(Arrays.toString(studentsList.toArray()));  // TODO: find out how to print all the instances in the list
+                        System.out.println(Arrays.toString(studentsList.toArray()));  // TODO: find out how to print all student names in the list
 
                         System.out.println("Course Name: " + aCourse + "\nCourse ID: " + aId +
                                 "\nCredits: " + aNumberOfCredits + "\nStudents:"
@@ -107,6 +109,34 @@ public class Main {
 
             } else if (actionChoice.equals("add student grades")) {
                 // Add student grades
+                int aCourseCredits = 0;
+                String aCourseID;
+                do {
+                    System.out.println("Course ID: ");
+                    aCourseID = in.nextLine();
+                    if (!aCourseID.equals(""))
+                    {
+                        // Get number of course credits and add them to aCourseCredits
+                        int iCourseID = Integer.parseInt(aCourseID);
+                        Course course = courses.get(iCourseID);
+                        aCourseCredits = course.getNumberOfCredits();
+
+                        System.out.println("Student ID: ");
+                        Integer aStudentID = in.nextInt() - 1;
+                        // Get student object by id
+                        Student student = students.get(aStudentID);
+                        // Set Grade
+                        System.out.println("Grade (ex: 4.0): ");
+                        double aGrade = in.nextDouble();
+                        student.addGrade(aCourseCredits, aGrade);
+
+                        // Read in the newline before looping back
+                        in.nextLine();
+
+                    }
+                } while(!aCourseID.equals(""));
+
+
             } else if (actionChoice.equals("enroll students in course")) {
                 // Add students to course
                 String aCourseID;
@@ -115,7 +145,7 @@ public class Main {
                     aCourseID = in.nextLine();
                     if (!aCourseID.equals(""))
                     {
-                        System.out.print("Student ID: ");
+                        System.out.println("Student ID: ");
                         Integer aStudentID = in.nextInt();
                         // Get student object by id
                         students.get(aStudentID);
