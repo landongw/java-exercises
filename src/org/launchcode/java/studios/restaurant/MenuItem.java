@@ -46,33 +46,7 @@ public class MenuItem {
         this.creationDate = creationDate;
     }
 
-
-    // Generate equals and hashCode methods by right clicking and selecting "Generate".
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        MenuItem menuItem = (MenuItem) o;
-//
-//        if (Double.compare(menuItem.price, price) != 0) return false;
-//        if (creationDate != menuItem.creationDate) return false;
-//        if (description != null ? !description.equals(menuItem.description) : menuItem.description != null)
-//            return false;
-//        return category.equals(menuItem.category);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result;
-//        long temp;
-//        temp = Double.doubleToLongBits(price);
-//        result = (int) (temp ^ (temp >>> 32));
-//        result = 31 * result + (description != null ? description.hashCode() : 0);
-//        result = 31 * result + category.hashCode();
-//        result = 31 * result + (int) (creationDate ^ (creationDate >>> 32));
-//        return result;
-//    }
+    // TODO: isItemNew method
 
 
     // Example of generating equals and hashCode methods using getters and setters

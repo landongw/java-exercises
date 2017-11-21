@@ -82,7 +82,7 @@ public class Student {
         // Add grade to the gradesList
         gradesList.put(courseID, new Pair<>(courseCredits, grade));
         int iGrade = (int) grade;
-        numberOfCredits += ((courseCredits / 4) * iGrade); // TODO: This keeps evaluating to zero, WHY WHY WHY??!!
+        numberOfCredits += ((courseCredits / 4) * iGrade);
 //        gpa = grade / courseCredits; // totalQualityScore is the same as GPA
 
 
@@ -116,7 +116,7 @@ public class Student {
         }
 
         double aGpa = qualityScore / numberOfCredits;
-        setGpa(aGpa);
+        setGpa(aGpa); // TODO: evaluates to infinity, fix me
 
     }
 
