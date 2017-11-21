@@ -24,8 +24,7 @@ public class MenuItem {
     }
 
     public int getNextId() {
-        nextId++;
-        return nextId;
+        return nextId++;
     }
 
     public String getItemName() {
