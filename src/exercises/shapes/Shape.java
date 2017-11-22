@@ -1,6 +1,6 @@
 package exercises.shapes;
 
-public abstract class Shape {
+public class Shape extends AbstractEntity {
 
     private String name;
     private int id;

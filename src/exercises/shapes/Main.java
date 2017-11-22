@@ -8,6 +8,7 @@ public class Main {
 
         Shape mySquare = new Square("spongebob squarepants", "yellow", 4.3);
 
-        System.out.println(myCircle.getRadius());
+        System.out.println(myCircle);
+        System.out.println(mySquare);
     }
 }
