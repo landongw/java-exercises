@@ -3,9 +3,7 @@ package exercises.shapes;
 public class Shape extends AbstractEntity {
 
     private String name;
-    private int id;
     private String color;
-    private static int nextId = 0;
 
     public Shape(String name, String color) {
         this.name = name;
