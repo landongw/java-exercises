@@ -3,7 +3,7 @@ package org.launchcode.java.studios.restaurant;
 public class MenuItem {
 
     private final int itemId;
-    private int nextId = 0;
+    private static int nextId = 0;
     private String itemName;
     private double price;
     private String description;
@@ -23,7 +23,7 @@ public class MenuItem {
         return itemId;
     }
 
-    public int getNextId() {
+    public static int getNextId() {
         return nextId++;
     }
 
@@ -108,12 +108,10 @@ public class MenuItem {
 
     @Override
     public String toString() {
-        return "MenuItem{" +
-                "itemId=" + itemId +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", creationDate=" + creationDate +
-                ", updatedDate=" + updatedDate +
-                '}';
+        return  "\nitem name: " + itemName +
+                "\nprice: " + price +
+                "\ndescription: " + description;
     }
+
+
 }

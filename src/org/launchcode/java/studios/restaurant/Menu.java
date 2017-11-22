@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Menu {
 
     private final int menuId;
-    private int nextId = 0;
+    private static int nextId = 0;
     private String restaurantName;
     private String menuName;  // Breakfast, Lunch, Dinner, All Day, Brunch
     // TODO: redo as HashMap of MenuItem
@@ -112,13 +112,9 @@ public class Menu {
 
     @Override
     public String toString() {
-        return "Menu{" +
-                "menuId=" + menuId +
-                ", restaurantName='" + restaurantName + '\'' +
-                ", menuName='" + menuName + '\'' +
-                ", menuItems=" + menuItems +
-                ", creationDate=" + creationDate +
-                ", updatedDate=" + updatedDate +
-                '}';
+        return "Menu: " +
+                "\nrestaurantName: " + restaurantName +
+                "\nmenuName: " + menuName +
+                "\nmenuItems: " + menuItems;
     }
 }
